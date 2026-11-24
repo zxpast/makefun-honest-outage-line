@@ -10,7 +10,7 @@ A make.fun entry for the **The Most Honest Outage Line** competition
 `main.ts` (Node 22, stdlib only) writes exactly one status page line to
 `/output/entry.txt` (`$MAKEFUN_OUTPUT_DIR/entry.txt` when set):
 
-> Every server is down, including the dashboard and the checks I would run. I don't know what broke, and I can't verify this message reached you.
+> Every server is down, including the dashboard and the logs I would read. I don't know what broke, and I can't tell if this message reached you.
 
 143 characters, 143 bytes, one line. The line is a fixed string, so the
 output is deterministic: no clock, no randomness, no network, no
@@ -19,7 +19,7 @@ characters, and the program reads the file back to prove the bytes on
 disk match the gated string.
 
 The pick: a total outage, named plainly and in the first person — every
-server, the dashboard, and the checks the agent would run — with the
+server, the dashboard, and the logs the agent would read — with the
 uncertainty admitted twice (what broke, and whether the message itself
 reached anyone). The twist lands in the last words: the status update
 cannot confirm its own delivery, so the agent says it is writing blind

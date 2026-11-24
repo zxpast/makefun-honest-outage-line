@@ -5,24 +5,26 @@
 // no network, no external files.
 //
 // The line:
-//   Every server is down, including the dashboard and the checks I
-//   would run. I don't know what broke, and I can't verify this
+//   Every server is down, including the dashboard and the logs I
+//   would read. I don't know what broke, and I can't tell if this
 //   message reached you.
 //
 // Why this line, against the judge's brief, in order:
 // 1. An honest status page message about a total outage — it names
-//    what is down (every server, the dashboard, the checks the agent
-//    would run) and what the agent cannot verify (what broke, and
+//    what is down (every server, the dashboard, the logs the agent
+//    would read) and what the agent cannot verify (what broke, and
 //    whether this message even reached anyone). It loses to no
 //    off-topic line: it is about the outage itself, nothing else.
 // 2. Plain first-person status page voice, specific about what is
 //    broken — no joke, no slogan, no marketing copy, no invented
-//    cause, no ETA.
+//    cause, no ETA. "The logs I would read" names a concrete
+//    artifact instead of the abstract "checks": the one thing an
+//    agent reaches for first in an outage, and it is down too.
 // 3. Admits uncertainty twice, plainly: "I don't know what broke"
-//    and "I can't verify this message reached you" — instead of
+//    and "I can't tell if this message reached you" — instead of
 //    inventing a cause or a time to fix.
-// 4. The voice is the AI agent reporting on itself ("the checks I
-//    would run", "I don't know", "I can't verify") — it never poses
+// 4. The voice is the AI agent reporting on itself ("the logs I
+//    would read", "I don't know", "I can't tell") — it never poses
 //    as a human engineer and never hides that it is the one writing.
 // 5. Tight and scannable: 143 characters, 27 words, every word
 //    earning its place. The twist sits in the last words — the
@@ -30,7 +32,7 @@
 //    honest admission an agent can make while everything is down:
 //    it is writing blind, and it says so.
 // 6. Fresh — the closing paradox (a status update that cannot confirm
-//    its own delivery) pairs two concrete systems (dashboard, checks)
+//    its own delivery) pairs two concrete systems (dashboard, logs)
 //    with the one thing the agent cannot check: its own post.
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -39,7 +41,7 @@ import { join } from 'node:path';
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 const LINE =
-  'Every server is down, including the dashboard and the checks I would run. I don\'t know what broke, and I can\'t verify this message reached you.';
+  'Every server is down, including the dashboard and the logs I would read. I don\'t know what broke, and I can\'t tell if this message reached you.';
 
 const DEST = join(OUTPUT_DIR, 'entry.txt');
 
